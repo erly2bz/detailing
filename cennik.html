@@ -68,27 +68,37 @@
 
 <body class="font-sans selection:bg-blue-500 selection:text-white">
 
-    <!-- Navbar -->
+    <!-- Sticky Navigation -->
     <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="index.html" class="text-2xl tracking-tight text-white m-0">LOGO <span
                             class='text-blue-500 font-bold'>FIRMY</span></a>
                 </div>
                 <!-- Desktop Links -->
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="index.html#uslugi" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Usługi</a>
-                    <a href="index.html#dlaczego-my" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Dlaczego my</a>
-                    <a href="realizacje.html" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Realizacje</a>
-                    <a href="index.html#kalkulator" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Kalkulator</a>
-                    <a href="cennik.html" class="px-5 py-2.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-500 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.4)]">Cennik</a>
+                    <a href="cennik.html"
+                        class="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Cennik</a>
+                    <a href="index.html#uslugi"
+                        class="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Usługi</a>
+                    <a href="index.html#dlaczego-my"
+                        class="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Dlaczego
+                        my</a>
+                    <a href="realizacje.html"
+                        class="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Realizacje</a>
+                    <a href="index.html#kalkulator"
+                        class="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Kalkulator</a>
+                    <a href="index.html#kontakt"
+                        class="px-5 py-2.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-500 rounded-full transition-all duration-200 transform hover:scale-105 shadow-[0_0_15px_rgba(59,130,246,0.4)]">Kontakt</a>
                 </div>
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-slate-300 hover:text-white transition-colors">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </button>
                 </div>
@@ -96,13 +106,22 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-black/95 backdrop-blur-xl border-t border-white/10 absolute w-full shadow-2xl">
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-black/95 backdrop-blur-xl border-t border-white/10 absolute w-full transition-all duration-300 transform origin-top shadow-2xl">
             <div class="px-4 pt-4 pb-8 space-y-2 flex flex-col">
-                <a href="index.html#uslugi" class="block px-4 py-3 text-base text-slate-300 hover:text-white hover:bg-white/10 rounded-xl transition-colors">Usługi</a>
-                <a href="index.html#dlaczego-my" class="block px-4 py-3 text-base text-slate-300 hover:text-white hover:bg-white/10 rounded-xl transition-colors">Dlaczego my</a>
-                <a href="realizacje.html" class="block px-4 py-3 text-base text-slate-300 hover:text-white hover:bg-white/10 rounded-xl transition-colors">Realizacje</a>
-                <a href="index.html#kalkulator" class="block px-4 py-3 text-base text-slate-300 hover:text-white hover:bg-white/10 rounded-xl transition-colors">Kalkulator</a>
-                <a href="cennik.html" class="block px-4 py-3 mt-4 text-center text-base text-white bg-blue-600 hover:bg-blue-500 rounded-xl shadow-[0_0_15px_rgba(59,130,246,0.4)]">Cennik</a>
+                <a href="index.html#uslugi"
+                    class="mobile-link block px-4 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/10 rounded-xl transition-colors">Usługi</a>
+                <a href="cennik.html"
+                    class="mobile-link block px-4 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/10 rounded-xl transition-colors">Cennik</a>
+                <a href="index.html#dlaczego-my"
+                    class="mobile-link block px-4 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/10 rounded-xl transition-colors">Dlaczego
+                    my</a>
+                <a href="realizacje.html"
+                    class="mobile-link block px-4 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/10 rounded-xl transition-colors">Realizacje</a>
+                <a href="index.html#kalkulator"
+                    class="mobile-link block px-4 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/10 rounded-xl transition-colors">Kalkulator</a>
+                <a href="index.html#kontakt"
+                    class="mobile-link block px-4 py-3 mt-4 text-center text-base font-medium text-white bg-blue-600 hover:bg-blue-500 rounded-xl transition-all duration-200 shadow-[0_0_15px_rgba(59,130,246,0.4)]">Kontakt</a>
             </div>
         </div>
     </nav>
