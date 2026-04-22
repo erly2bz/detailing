@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAZWA FIRMY - Detailing aut</title>
+    <meta name="description"
+        content="Premium Car Detailing. Powłoki ceramiczne, folie PPF i renowacja lakieru. Zabezpiecz swój samochód na lata.">
+    <!-- Tailwind CSS (CDN for quick setup) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        background: '#0a0a0a',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: white;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Glassmorphism Navigation */
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Image Placeholder Styling */
+        .placeholder-gradient {
+            background: linear-gradient(135deg, #121212 0%, #0a0a0a 100%);
+            border: 1px dashed rgba(255, 255, 255, 0.15);
+        }
+
+        /* Stats Cards Styling */
+        .stat-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2);
+        }
+
+        /* Ambient Glow behind Hero */
+        .hero-glow {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 60%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, rgba(10, 10, 10, 0) 60%);
+            z-index: -1;
+            filter: blur(60px);
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body class="font-sans selection:bg-blue-500 selection:text-white">
+
+    <!-- Sticky Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-2xl tracking-tight text-white m-0">LOGO <span
+                            class='text-blue-500 font-bold'>FIRMY</span></a>
+                </div>
+                <!-- Desktop Links -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="cennik.html"
+                        class="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Cennik</a>
+                    <a href="#uslugi"
+                        class="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Usługi</a>
+                    <a href="#dlaczego-my"
+                        class="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Dlaczego
+                        my</a>
+                    <a href="realizacje.html"
+                        class="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Realizacje</a>
+                    <a href="#kalkulator"
+                        class="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Kalkulator</a>
+                    <a href="#kontakt"
+                        class="px-5 py-2.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-500 rounded-full transition-all duration-200 transform hover:scale-105 shadow-[0_0_15px_rgba(59,130,246,0.4)]">Kontakt</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-slate-300 hover:text-white transition-colors">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-black/95 backdrop-blur-xl border-t border-white/10 absolute w-full transition-all duration-300 transform origin-top shadow-2xl">
+            <div class="px-4 pt-4 pb-8 space-y-2 flex flex-col">
+                <a href="#uslugi"
+                    class="mobile-link block px-4 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/10 rounded-xl transition-colors">Usługi</a>
+                <a href="cennik.html"
+                    class="mobile-link block px-4 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/10 rounded-xl transition-colors">Cennik</a>
+                <a href="#dlaczego-my"
+                    class="mobile-link block px-4 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/10 rounded-xl transition-colors">Dlaczego
+                    my</a>
+                <a href="realizacje.html"
+                    class="mobile-link block px-4 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/10 rounded-xl transition-colors">Realizacje</a>
+                <a href="#kalkulator"
+                    class="mobile-link block px-4 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/10 rounded-xl transition-colors">Kalkulator</a>
+                <a href="#kontakt"
+                    class="mobile-link block px-4 py-3 mt-4 text-center text-base font-medium text-white bg-blue-600 hover:bg-blue-500 rounded-xl transition-all duration-200 shadow-[0_0_15px_rgba(59,130,246,0.4)]">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden flex flex-col justify-center min-h-[90vh]">
+
+        <!-- Obrazy aut "przyklejone" do narożników sekcji (za elementami statystyk) -->
+        <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+            <img src="zdjecia/mustang.png" alt=""
+                class="absolute bottom-0 right-0 w-[32rem] sm:w-[45rem] md:w-[70rem] lg:w-[80rem] max-w-none opacity-85 mix-blend-screen translate-x-[10%] md:translate-x-[5%] translate-y-[5%] [mask-image:linear-gradient(to_top,rgba(0,0,0,1)_10%,rgba(0,0,0,0)_80%)] -webkit-mask-image:linear-gradient(to_top,rgba(0,0,0,1)_10%,rgba(0,0,0,0)_80%)">
+        </div>
+
+        <!-- Subtle Ambient Glow -->
+        <div class="hero-glow"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="text-center max-w-4xl mx-auto mb-16">
+                <!-- Trust Badge / Ping -->
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-sm font-medium text-blue-400 mb-8 backdrop-blur-sm shadow-sm hidden sm:inline-flex">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                    </span>
+                    Certyfikowane studio detailingowe
+                </div>
+
+                <!-- Headline -->
+                <h1
+                    class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight lg:leading-[1.1]">
+                    Perfekcja w każdym detalu.<br class="hidden md:block" />
+                    <span class="text-slate-200">Premium Car <span
+                            class="text-blue-500 font-extrabold">Detailing</span></span>
+                </h1>
+
+                <!-- Subheadline -->
+                <p
+                    class="mt-6 text-lg sm:text-xl md:text-2xl text-slate-400 font-light max-w-2xl mx-auto leading-relaxed">
+                    Przywracamy blask i zabezpieczamy na lata. Powłoki ceramiczne, folie PPF, renowacja lakieru.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#kontakt"
+                        class="px-8 py-4 text-base font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-full transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(59,130,246,0.3)]">
+                        Zarezerwuj termin
+                    </a>
+                    <a href="#uslugi"
+                        class="px-8 py-4 text-base font-semibold text-white bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all duration-300 backdrop-blur-sm">
+                        Nasze usługi
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16">
+                <!-- Stat Card 1 -->
+                <div class="stat-card rounded-2xl p-6 text-center backdrop-blur-sm">
+                    <div class="text-3xl sm:text-4xl font-bold text-white mb-2">10+ lat</div>
+                    <div class="text-sm tracking-wide text-slate-400 uppercase font-medium">doświadczenia</div>
+                </div>
+                <!-- Stat Card 2 -->
+                <div class="stat-card rounded-2xl p-6 text-center backdrop-blur-sm">
+                    <div class="text-3xl sm:text-4xl font-bold text-white mb-2">500+</div>
+                    <div class="text-sm tracking-wide text-slate-400 uppercase font-medium">zabezpieczonych aut</div>
+                </div>
+                <!-- Stat Card 3 -->
+                <div class="stat-card rounded-2xl p-6 text-center backdrop-blur-sm">
+                    <div class="text-3xl sm:text-4xl font-bold text-white mb-2">5 lat</div>
+                    <div class="text-sm tracking-wide text-slate-400 uppercase font-medium">gwarancji powłoki</div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <!-- Proces Section -->
+    <section id="uslugi" class="py-24 relative border-t border-white/5 bg-[#050505] overflow-hidden">
+        <!-- Subtelny deseń (kratka) w tle i lekki gradient -->
+        <div
+            class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/10 via-transparent to-transparent pointer-events-none">
+        </div>
+        <div
+            class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik00MCAwSDB2NDBoNDBWMEoiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAyKSIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjwvc3ZnPg==')] opacity-50 pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Nasze Główne Usługi</h2>
+                <p class="text-slate-400 text-lg">Kompleksowa pielęgnacja i zabezpieczenie Twojego samochodu na
+                    najwyższym poziomie.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <!-- Connector Line -->
+                <div
+                    class="hidden md:block absolute top-12 left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent -z-10">
+                </div>
+
+                <!-- Step 1 -->
+                <div class="text-center flex flex-col items-center group">
+                    <div
+                        class="w-24 h-24 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center mb-6 group-hover:border-blue-500 transition-colors duration-300 shadow-lg">
+                        <svg class="w-10 h-10 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Mycie Detailingowe</h3>
+                    <p class="text-slate-400 text-sm">Wieloetapowe, bezpieczne mycie z dekontaminacją lakieru, usuwaniem
+                        smoły i opiłków.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center flex flex-col items-center group">
+                    <div
+                        class="w-24 h-24 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center mb-6 group-hover:border-blue-500 transition-colors duration-300 shadow-lg">
+                        <svg class="w-10 h-10 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Korekta Lakieru</h3>
+                    <p class="text-slate-400 text-sm">Wieloetapowe polerowanie przywracające fabryczny blask i usuwające
+                        99% zarysowań.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center flex flex-col items-center group">
+                    <div
+                        class="w-24 h-24 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center mb-6 group-hover:border-blue-500 transition-colors duration-300 shadow-lg">
+                        <svg class="w-10 h-10 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Powłoki Ceramiczne</h3>
+                    <p class="text-slate-400 text-sm">Aplikacja certyfikowanych powłok ceramicznych ułatwiających mycie
+                        i chroniących lakier.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="text-center flex flex-col items-center group">
+                    <div
+                        class="w-24 h-24 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center mb-6 group-hover:border-blue-500 transition-colors duration-300 shadow-lg">
+                        <svg class="w-10 h-10 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Folie Ochronne PPF</h3>
+                    <p class="text-slate-400 text-sm">Najtrwalsza ochrona przed odpryskami, zarysowaniami i zmatowieniem
+                        lakieru.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dlaczego USA? (Benefits) -->
+    <section id="dlaczego-my" class="py-24 relative bg-slate-900/40 backdrop-blur-sm border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Dlaczego warto wybrać nasze studio?</h2>
+                    <p class="text-slate-400 text-lg mb-8">Pracujemy na najwyższej jakości kosmetykach, używamy
+                        nowoczesnego sprzętu i stale się szkolimy.</p>
+
+                    <ul class="space-y-6">
+                        <li class="flex gap-4">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center border border-blue-500/20">
+                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-1">Doświadczenie i Pasja</h4>
+                                <p class="text-slate-400 text-sm">Setki zabezpieczonych samochodów i ciągłe dążenie do
+                                    perfekcji w każdym detalu.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center border border-blue-500/20">
+                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-1">Certyfikowane Produkty</h4>
+                                <p class="text-slate-400 text-sm">Jesteśmy akredytowanym studiem aplikacji topowych
+                                    powłok elastomerowych i folii PPF.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center border border-blue-500/20">
+                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-1">Technologia i Precyzja</h4>
+                                <p class="text-slate-400 text-sm">Każdy pojazd traktujemy indywidualnie, dobierając
+                                    odpowiednie ścierniwa, pady i chemie.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Grafika Porównania Cen (Wykres) -->
+                <div
+                    class="w-full rounded-3xl bg-[#0a0a0a]/80 backdrop-blur-md border border-white/10 shadow-[0_0_30px_rgba(59,130,246,0.05)] p-6 md:p-8 flex flex-col justify-center relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-transparent pointer-events-none">
+                    </div>
+
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-2 relative z-10 flex items-center gap-3">
+                        <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        Popularne Pakiety
+                    </h3>
+                    <p class="text-slate-400 text-sm mb-8 relative z-10">Przykładowe zestawienia usług wybierane przez
+                        naszych klientów.</p>
+
+                    <div class="space-y-4 relative z-10">
+                        <!-- Pakiet 1 -->
+                        <div
+                            class="bg-black/40 rounded-2xl p-5 border border-slate-700/50 hover:border-blue-500/50 transition-colors">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-white md:text-lg">Pakiet "Nowe Auto"</span>
+                                <span
+                                    class="text-blue-400 text-xs font-bold bg-blue-500/10 px-2 py-1 rounded border border-blue-500/20">Bestseller</span>
+                            </div>
+                            <ul class="space-y-2 mt-2">
+                                <li class="flex items-center gap-3 text-sm text-slate-300">
+                                    <svg class="w-4 h-4 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Folia PPF (Full Front) - maska, zderzak, lampy, błotniki
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-slate-300">
+                                    <svg class="w-4 h-4 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Aplikacja powłoki ceramicznej 3-letniej na resztę pojazdu
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-slate-300">
+                                    <svg class="w-4 h-4 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Zabezpieczenie felg i szyb (niewidzialna wycieraczka)
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Pakiet 2 -->
+                        <div
+                            class="bg-black/40 rounded-2xl p-5 border border-slate-700/50 hover:border-blue-500/50 transition-colors">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-white md:text-lg">Pakiet "Odświeżenie"</span>
+                            </div>
+                            <ul class="space-y-2 mt-2">
+                                <li class="flex items-center gap-3 text-sm text-slate-300">
+                                    <svg class="w-4 h-4 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Korekta lakieru One Step (usunięcie do 70% zarysowań)
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-slate-300">
+                                    <svg class="w-4 h-4 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Aplikacja wosku klasy Premium lub polimeru
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-slate-300">
+                                    <svg class="w-4 h-4 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Podstawowy Detailing Wnętrza
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Pakiet 3 -->
+                        <div
+                            class="bg-black/40 rounded-2xl p-5 border border-slate-700/50 hover:border-blue-500/50 transition-colors">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-white md:text-lg">Pakiet "Pełne Zabezpieczenie"</span>
+                                <span
+                                    class="text-green-400 text-xs font-bold bg-green-500/10 px-2 py-1 rounded border border-green-500/20">PREMIUM</span>
+                            </div>
+                            <ul class="space-y-2 mt-2">
+                                <li class="flex items-center gap-3 text-sm text-slate-300">
+                                    <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Folia PPF pokrywająca w 100% całą karoserię pojazdu
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-slate-300">
+                                    <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Ochrona ekranów wewnątrz PPF
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-slate-300">
+                                    <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Impregnacja skór powłoką ceramiczną
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Imports Gallery -->
+    <section class="py-24 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-sm font-medium text-blue-400 mb-4">
+                    Nasze realizacje
+                </div>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Ostatnie Realizacje</h2>
+                <p class="text-slate-400 text-lg">Zobacz niesamowite metamorfozy i efekty naszej pracy.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="bg-[#111] border border-white/5 rounded-3xl overflow-hidden hover:border-white/10 transition-colors duration-300 group">
+                    <!-- Slider Container -->
+                    <div
+                        class="relative w-full aspect-[4/3] sm:aspect-video overflow-hidden group/slider border-b border-white/5 bg-slate-900 select-none">
+
+                        <!-- After Image Layer (Bottom) -->
+                        <div
+                            class="absolute inset-0 w-full h-full flex flex-col items-center justify-center p-6 text-center">
+                            <div
+                                class="w-16 h-16 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center mb-3">
+                                <svg class="w-8 h-8 text-slate-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                                    </path>
+                                </svg>
+                            </div>
+                            <span class="text-slate-400 font-medium text-sm">Po detailingu</span>
+                            <div
+                                class="absolute top-4 right-4 bg-blue-600/90 backdrop-blur text-[10px] uppercase font-bold px-2 py-1 rounded text-white shadow-lg pointer-events-none">
+                                Po</div>
+                        </div>
+
+                        <!-- Before Image Layer (Top) -->
+                        <div class="absolute inset-0 w-full h-full z-10 before-layer origin-left"
+                            style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
+                            <img src="zdjecia/brudne-auto.png" alt="Aukcja 1"
+                                class="absolute inset-0 w-full h-full object-cover pointer-events-none">
+                            <div
+                                class="absolute inset-0 bg-black/20 pointer-events-none group-hover/slider:bg-black/0 transition-colors duration-500">
+                            </div>
+                            <div
+                                class="absolute top-4 left-4 bg-red-600/90 backdrop-blur text-[10px] uppercase font-bold px-2 py-1 rounded text-white shadow-lg pointer-events-none">
+                                Przed</div>
+                        </div>
+
+                        <!-- Slider Handle Line -->
+                        <div class="absolute top-0 bottom-0 w-0.5 bg-white z-20 slider-line pointer-events-none shadow-[0_0_10px_rgba(0,0,0,0.5)]"
+                            style="left: 50%;">
+                            <div
+                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(0,0,0,0.5)] text-slate-800 transition-transform duration-200 group-hover/slider:scale-110">
+                                <svg class="w-3 h-3 absolute left-1" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M15 19l-7-7 7-7"></path>
+                                </svg>
+                                <svg class="w-3 h-3 absolute right-1" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Range Input -->
+                        <input type="range" min="0" max="100" value="50"
+                            class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30 ba-slider">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Opel</h3>
+                                <p class="text-slate-500 text-sm">Stan lakieru: Średni • Czas prac: 3 dni</p>
+                            </div>
+                            <div
+                                class="bg-slate-800 text-white text-xs font-bold px-3 py-1 rounded-md border border-slate-700">
+                                Ceramika
+                            </div>
+                        </div>
+                        <div
+                            class="mt-6 flex items-center gap-2 bg-gradient-to-r from-green-500/10 to-transparent p-3 rounded-lg border-l-2 border-green-500">
+                            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span class="text-green-400 font-bold text-sm tracking-wide">Odzyskany blask: Korekta +
+                                Ceramika</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="bg-[#111] border border-white/5 rounded-3xl overflow-hidden hover:border-white/10 transition-colors duration-300 group">
+                    <!-- Slider Container -->
+                    <div
+                        class="relative w-full aspect-[4/3] sm:aspect-video overflow-hidden group/slider border-b border-white/5 bg-slate-900 select-none">
+
+                        <!-- After Image Layer (Bottom) -->
+                        <div
+                            class="absolute inset-0 w-full h-full flex flex-col items-center justify-center p-6 text-center">
+                            <div
+                                class="w-16 h-16 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center mb-3">
+                                <svg class="w-8 h-8 text-slate-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                                    </path>
+                                </svg>
+                            </div>
+                            <span class="text-slate-400 font-medium text-sm">Po detailingu</span>
+                            <div
+                                class="absolute top-4 right-4 bg-blue-600/90 backdrop-blur text-[10px] uppercase font-bold px-2 py-1 rounded text-white shadow-lg pointer-events-none">
+                                Po</div>
+                        </div>
+
+                        <!-- Before Image Layer (Top) -->
+                        <div class="absolute inset-0 w-full h-full z-10 before-layer origin-left"
+                            style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
+                            <img src="zdjecia/brudne-auto2.jpg" alt="Aukcja 2"
+                                class="absolute inset-0 w-full h-full object-cover pointer-events-none">
+                            <div
+                                class="absolute inset-0 bg-black/20 pointer-events-none group-hover/slider:bg-black/0 transition-colors duration-500">
+                            </div>
+                            <div
+                                class="absolute top-4 left-4 bg-red-600/90 backdrop-blur text-[10px] uppercase font-bold px-2 py-1 rounded text-white shadow-lg pointer-events-none">
+                                Przed</div>
+                        </div>
+
+                        <!-- Slider Handle Line -->
+                        <div class="absolute top-0 bottom-0 w-0.5 bg-white z-20 slider-line pointer-events-none shadow-[0_0_10px_rgba(0,0,0,0.5)]"
+                            style="left: 50%;">
+                            <div
+                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(0,0,0,0.5)] text-slate-800 transition-transform duration-200 group-hover/slider:scale-110">
+                                <svg class="w-3 h-3 absolute left-1" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M15 19l-7-7 7-7"></path>
+                                </svg>
+                                <svg class="w-3 h-3 absolute right-1" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Range Input -->
+                        <input type="range" min="0" max="100" value="50"
+                            class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30 ba-slider">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Audi</h3>
+                                <p class="text-slate-500 text-sm">Stan lakieru: Bardzo dobry • Czas prac: 2 dni</p>
+                            </div>
+                            <div
+                                class="bg-slate-800 text-white text-xs font-bold px-3 py-1 rounded-md border border-slate-700">
+                                Ceramika
+                            </div>
+                        </div>
+                        <div
+                            class="mt-6 flex items-center gap-2 bg-gradient-to-r from-green-500/10 to-transparent p-3 rounded-lg border-l-2 border-green-500">
+                            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span class="text-green-400 font-bold text-sm tracking-wide">Zabezpieczenie: Folia PPF Full
+                                Front</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="bg-[#111] border border-white/5 rounded-3xl overflow-hidden hover:border-white/10 transition-colors duration-300 group">
+                    <!-- Slider Container -->
+                    <div
+                        class="relative w-full aspect-[4/3] sm:aspect-video overflow-hidden group/slider border-b border-white/5 bg-slate-900 select-none">
+
+                        <!-- After Image Layer (Bottom) -->
+                        <div
+                            class="absolute inset-0 w-full h-full flex flex-col items-center justify-center p-6 text-center">
+                            <div
+                                class="w-16 h-16 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center mb-3">
+                                <svg class="w-8 h-8 text-slate-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                                    </path>
+                                </svg>
+                            </div>
+                            <span class="text-slate-400 font-medium text-sm">Po detailingu</span>
+                            <div
+                                class="absolute top-4 right-4 bg-blue-600/90 backdrop-blur text-[10px] uppercase font-bold px-2 py-1 rounded text-white shadow-lg pointer-events-none">
+                                Po</div>
+                        </div>
+
+                        <!-- Before Image Layer (Top) -->
+                        <div class="absolute inset-0 w-full h-full z-10 before-layer origin-left"
+                            style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
+                            <img src="zdjecia/mud-car.jpg.png" alt="Aukcja 3"
+                                class="absolute inset-0 w-full h-full object-cover pointer-events-none">
+                            <div
+                                class="absolute inset-0 bg-black/20 pointer-events-none group-hover/slider:bg-black/0 transition-colors duration-500">
+                            </div>
+                            <div
+                                class="absolute top-4 left-4 bg-red-600/90 backdrop-blur text-[10px] uppercase font-bold px-2 py-1 rounded text-white shadow-lg pointer-events-none">
+                                Przed</div>
+                        </div>
+
+                        <!-- Slider Handle Line -->
+                        <div class="absolute top-0 bottom-0 w-0.5 bg-white z-20 slider-line pointer-events-none shadow-[0_0_10px_rgba(0,0,0,0.5)]"
+                            style="left: 50%;">
+                            <div
+                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(0,0,0,0.5)] text-slate-800 transition-transform duration-200 group-hover/slider:scale-110">
+                                <svg class="w-3 h-3 absolute left-1" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M15 19l-7-7 7-7"></path>
+                                </svg>
+                                <svg class="w-3 h-3 absolute right-1" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Range Input -->
+                        <input type="range" min="0" max="100" value="50"
+                            class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30 ba-slider">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Jeep</h3>
+                                <p class="text-slate-500 text-sm">Stan: Motocykl nowy • Czas prac: 2 dni</p>
+                            </div>
+                            <div
+                                class="bg-slate-800 text-white text-xs font-bold px-3 py-1 rounded-md border border-slate-700">
+                                Ceramika
+                            </div>
+                        </div>
+                        <div
+                            class="mt-6 flex items-center gap-2 bg-gradient-to-r from-green-500/10 to-transparent p-3 rounded-lg border-l-2 border-green-500">
+                            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span class="text-green-400 font-bold text-sm tracking-wide">Zabezpieczenie ceramiczne
+                                lakieru i plastików</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-16 border-y border-white/5 bg-slate-900/50 backdrop-blur-sm relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-gradient-to-r from-blue-900/10 via-transparent to-transparent pointer-events-none">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/5">
+                <!-- Stat 1 -->
+                <div class="text-center px-4 transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-3xl md:text-5xl font-extrabold text-white mb-2">500<span
+                            class="text-blue-500">+</span></div>
+                    <div class="text-xs md:text-sm text-slate-400 font-medium uppercase tracking-widest">Zabezpieczonych
+                        Aut</div>
+                </div>
+                <!-- Stat 2 -->
+                <div class="text-center px-4 transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-3xl md:text-5xl font-extrabold text-white mb-2">5<span
+                            class="text-blue-500">+</span></div>
+                    <div class="text-xs md:text-sm text-slate-400 font-medium uppercase tracking-widest">Lat
+                        Doświadczenia</div>
+                </div>
+                <!-- Stat 3 -->
+                <div class="text-center px-4 transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-3xl md:text-5xl font-extrabold text-white mb-2">24<span
+                            class="text-blue-500">/7</span></div>
+                    <div class="text-xs md:text-sm text-slate-400 font-medium uppercase tracking-widest">Monitorowany
+                        Obiekt</div>
+                </div>
+                <!-- Stat 4 -->
+                <div class="text-center px-4 transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-3xl md:text-5xl font-extrabold text-white mb-2">100<span
+                            class="text-blue-500">%</span></div>
+                    <div class="text-xs md:text-sm text-slate-400 font-medium uppercase tracking-widest">Zadowolonych
+                        Klientów</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kalkulator Section -->
+    <section id="kalkulator" class="py-24 relative border-t border-white/5 bg-[#0a0a0a]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal-trigger">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-sm font-medium text-blue-400 mb-4">
+                    Przejrzyste koszty
+                </div>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Kalkulator Detailingowy</h2>
+                <p class="text-slate-400 text-lg">Wybierz wielkość auta i interesujące Cię usługi, aby poznać
+                    orientacyjny koszt.</p>
+            </div>
+
+            <div
+                class="max-w-3xl mx-auto bg-gradient-to-b from-slate-800 to-[#0a0a0a] border border-blue-500/20 rounded-3xl p-8 shadow-[0_0_40px_rgba(59,130,246,0.15)] ring-1 ring-white/10 reveal-trigger relative overflow-hidden">
+                <div
+                    class="absolute top-0 inset-x-0 h-px w-full bg-gradient-to-r from-transparent via-blue-500/50 to-transparent">
+                </div>
+                <form id="calculator-form" class="space-y-6 relative z-10">
+                    <div class="grid grid-cols-1 gap-6">
+                        <!-- Wielkość pojazdu -->
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2">Wielkość pojazdu</label>
+                            <div class="relative">
+                                <select id="vehicle-size"
+                                    class="w-full bg-black/50 border border-slate-700 rounded-xl py-3 px-4 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors appearance-none">
+                                    <option value="male">Małe (Hatchback, Coupe)</option>
+                                    <option value="srednie">Średnie (Sedan, Kombi)</option>
+                                    <option value="duze">Duże (SUV, Van)</option>
+                                </select>
+                                <div
+                                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-400">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Usługi (Checkboxy) -->
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-3">Zakres usług</label>
+                            <div class="space-y-3">
+                                <label class="flex items-center space-x-3 cursor-pointer group">
+                                    <input type="checkbox" id="service-wash" value="wash"
+                                        class="form-checkbox h-5 w-5 text-blue-500 rounded border-slate-700 bg-black/50 focus:ring-blue-500 transition duration-150 ease-in-out">
+                                    <span class="text-slate-300 group-hover:text-white transition-colors">Premium Wash &
+                                        Decontamination</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer group">
+                                    <input type="checkbox" id="service-onestep" value="onestep"
+                                        class="form-checkbox h-5 w-5 text-blue-500 rounded border-slate-700 bg-black/50 focus:ring-blue-500 transition duration-150 ease-in-out">
+                                    <span class="text-slate-300 group-hover:text-white transition-colors">Korekta
+                                        Lakieru One Step</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer group">
+                                    <input type="checkbox" id="service-ceramic" value="ceramic"
+                                        class="form-checkbox h-5 w-5 text-blue-500 rounded border-slate-700 bg-black/50 focus:ring-blue-500 transition duration-150 ease-in-out">
+                                    <span class="text-slate-300 group-hover:text-white transition-colors">Powłoka
+                                        Ceramiczna (Trwałość 3-5 lat)</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer group">
+                                    <input type="checkbox" id="service-ppf" value="ppf"
+                                        class="form-checkbox h-5 w-5 text-blue-500 rounded border-slate-700 bg-black/50 focus:ring-blue-500 transition duration-150 ease-in-out">
+                                    <span class="text-slate-300 group-hover:text-white transition-colors">Folia PPF
+                                        (Full Front)</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer group">
+                                    <input type="checkbox" id="service-interior" value="interior"
+                                        class="form-checkbox h-5 w-5 text-blue-500 rounded border-slate-700 bg-black/50 focus:ring-blue-500 transition duration-150 ease-in-out">
+                                    <span class="text-slate-300 group-hover:text-white transition-colors">Detailing
+                                        Wnętrza</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" onclick="calculateTotal()"
+                        class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl transition-all duration-300 transform hover:scale-[1.02] shadow-[0_0_20px_rgba(59,130,246,0.2)]">
+                        Oblicz orientacyjny koszt
+                    </button>
+
+                    <!-- Wynik -->
+                    <div id="calculator-result"
+                        class="hidden mt-6 bg-black/40 border border-blue-500/30 rounded-2xl p-6 text-center">
+                        <p class="text-slate-400 text-sm mb-2">Szacowany koszt pakietu (PLN netto):</p>
+                        <p class="text-4xl font-bold text-white tracking-tight" id="total-cost">--</p>
+                        <p class="text-xs text-slate-500 mt-4">* Podana cena jest kwotą orientacyjną. Ostateczna wycena
+                            zależy od stanu faktycznego lakieru oraz wnętrza.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt Section -->
+    <section id="kontakt" class="py-24 relative border-t border-white/5 bg-gradient-to-b from-[#0a0a0a] to-[#050505]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="max-w-5xl mx-auto bg-gradient-to-br from-slate-900 via-slate-900 to-black border border-white/10 rounded-3xl overflow-hidden shadow-2xl reveal-trigger">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+
+                    <!-- Lewa strona - Info -->
+                    <div
+                        class="p-10 lg:p-12 border-b lg:border-b-0 lg:border-r border-white/5 relative overflow-hidden">
+                        <!-- Tło -->
+                        <div
+                            class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent pointer-events-none">
+                        </div>
+
+                        <div class="relative z-10">
+                            <h2 class="text-3xl font-bold text-white mb-4">Umów się na wycenę</h2>
+                            <p class="text-slate-400 mb-8 leading-relaxed">Chcesz zadbać o swój samochód? Opowiedz nam o
+                                swoich oczekiwaniach, a przygotujemy dla Ciebie dedykowaną ofertę i dobierzemy najlepsze
+                                rozwiązania.</p>
+
+                            <div class="space-y-6">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-white font-medium">+48 123 456 789</p>
+                                        <p class="text-slate-500 text-sm">Pon - Pt: 9:00 - 17:00</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-white font-medium">kontakt@nazwafirmy.pl</p>
+                                        <p class="text-slate-500 text-sm">Odpowiadamy w 24 godziny</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Prawa strona - Formularz -->
+                    <div class="p-10 lg:p-12">
+                        <form class="space-y-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-400 mb-1">Imię</label>
+                                    <input type="text"
+                                        class="w-full bg-black/30 border border-slate-700/50 rounded-lg py-2.5 px-4 text-white focus:outline-none focus:border-blue-500 transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-400 mb-1">Telefon</label>
+                                    <input type="tel"
+                                        class="w-full bg-black/30 border border-slate-700/50 rounded-lg py-2.5 px-4 text-white focus:outline-none focus:border-blue-500 transition-colors">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-400 mb-1">Marka, Model i Rocznik
+                                    Twojego auta</label>
+                                <input type="text" placeholder="np. BMW M3 2023"
+                                    class="w-full bg-black/30 border border-slate-700/50 rounded-lg py-2.5 px-4 text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-400 mb-1">Interesująca Cię
+                                    usługa</label>
+                                <input type="text"
+                                    class="w-full bg-black/30 border border-slate-700/50 rounded-lg py-2.5 px-4 text-white focus:outline-none focus:border-blue-500 transition-colors">
+                            </div>
+                            <div class="pt-2">
+                                <button type="submit"
+                                    class="w-full bg-white text-black hover:bg-slate-200 font-bold py-3.5 rounded-lg transition-colors duration-300 shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+                                    Wyślij zapytanie
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-12 text-center text-slate-500 text-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>&copy; 2026 NAZWA FIRMY. Wszelkie prawa zastrzeżone.</p>
+            <div class="mt-4 flex justify-center space-x-6">
+                <a href="#" class="hover:text-white transition-colors">Regulamin</a>
+                <a href="#" class="hover:text-white transition-colors">Polityka Prywatności</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. Smooth Scroll Animation targeting specific anchor tags
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // 2. Reveal on Scroll Effects using Intersection Observer
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-8');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Add base styles and observe revealing elements
+            document.querySelectorAll('.reveal-trigger, section > div').forEach((el, index) => {
+                // Ignore elements that shouldn't animate
+                if (el.classList.contains('hero-glow')) return;
+
+                // Add staggered delay based on original position (optional logic)
+                el.style.transitionDelay = `${(index % 3) * 100}ms`;
+                el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-8');
+                observer.observe(el);
+            });
+
+            // 3. Navbar scroll transition
+            const nav = document.querySelector('nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add('shadow-lg', 'bg-black/90', 'border-b', 'border-white/10');
+                    nav.classList.remove('glass-nav');
+                } else {
+                    nav.classList.add('glass-nav');
+                    nav.classList.remove('shadow-lg', 'bg-black/90', 'border-b', 'border-white/10');
+                }
+            });
+
+            // 4. Mobile Menu setup
+            const mobileMenuBtn = document.querySelector('nav button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+        });
+
+        // 5. Calculator Logic
+        function calculateTotal() {
+            const vehicleSize = document.getElementById('vehicle-size').value;
+            const resultBox = document.getElementById('calculator-result');
+            const totalText = document.getElementById('total-cost');
+
+            // Base prices for services depending on vehicle size
+            const pricing = {
+                male: { wash: 150, onestep: 800, ceramic: 1500, ppf: 4000, interior: 300 },
+                srednie: { wash: 200, onestep: 1000, ceramic: 1800, ppf: 4500, interior: 400 },
+                duze: { wash: 250, onestep: 1200, ceramic: 2200, ppf: 5000, interior: 500 }
+            };
+
+            let finalTotalPLN = 0;
+            const sizePrices = pricing[vehicleSize];
+
+            if (document.getElementById('service-wash').checked) finalTotalPLN += sizePrices.wash;
+            if (document.getElementById('service-onestep').checked) finalTotalPLN += sizePrices.onestep;
+            if (document.getElementById('service-ceramic').checked) finalTotalPLN += sizePrices.ceramic;
+            if (document.getElementById('service-ppf').checked) finalTotalPLN += sizePrices.ppf;
+            if (document.getElementById('service-interior').checked) finalTotalPLN += sizePrices.interior;
+
+            // Display Result
+            resultBox.classList.remove('hidden');
+            totalText.innerText = finalTotalPLN.toLocaleString('pl-PL') + " PLN+";
+
+            // Animation for text update
+            totalText.style.opacity = '0';
+            setTimeout(() => {
+                totalText.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                totalText.style.opacity = '1';
+                totalText.style.transform = 'scale(1.05)';
+                setTimeout(() => totalText.style.transform = 'scale(1)', 400);
+            }, 50);
+        }
+
+
+        // 6. Before/After Sliders Logic
+        document.querySelectorAll('.ba-slider').forEach(slider => {
+            slider.addEventListener('input', (e) => {
+                const val = e.target.value;
+                // Find parent container (.relative)
+                let currentElem = e.target;
+                while (currentElem && !currentElem.classList.contains('group/slider')) {
+                    currentElem = currentElem.parentElement;
+                }
+                if (currentElem) {
+                    const beforeLayer = currentElem.querySelector('.before-layer');
+                    const sliderLine = currentElem.querySelector('.slider-line');
+
+                    if (beforeLayer) beforeLayer.style.clipPath = `polygon(0 0, ${val}% 0, ${val}% 100%, 0 100%)`;
+                    if (sliderLine) sliderLine.style.left = `${val}%`;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
